@@ -16,3 +16,9 @@
     entry: '# type.*(?<!: ignore)$'
     language: pygrep
     types: [python]
+-   id: rst-backticks
+    name: rst ``code`` is two backticks
+    description: 'Detect common mistake of using single backticks when writing rst'
+    entry: ' `[^`]+[^_]`([^_]|$)'
+    language: pygrep
+    types: [rst]
