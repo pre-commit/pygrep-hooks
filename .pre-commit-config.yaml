@@ -1,0 +1,39 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v1.4.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: autopep8-wrapper
+    -   id: check-docstring-first
+    -   id: check-yaml
+    -   id: debug-statements
+    -   id: flake8
+-   repo: https://github.com/asottile/reorder_python_imports
+    rev: v1.1.0
+    hooks:
+    -   id: reorder-python-imports
+        args: [--py3-plus]
+-   repo: https://github.com/asottile/add-trailing-comma
+    rev: v0.6.4
+    hooks:
+    -   id: add-trailing-comma
+        args: [--py36-plus]
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v1.4.0
+    hooks:
+    -   id: pyupgrade
+        args: [--py36-plus]
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.620
+    hooks:
+    -   id: mypy
+-   repo: local
+    hooks:
+    -   id: generate-readme
+        name: generate readme
+        entry: ./generate-readme
+        language: python
+        additional_dependencies: [pyyaml]
+        files: \.pre-commit-hooks.yaml$
+        pass_filenames: false

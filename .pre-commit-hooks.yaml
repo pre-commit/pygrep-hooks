@@ -1,0 +1,18 @@
+-   id: python-check-mock-methods
+    name: check for not-real mock methods
+    description: 'Prevent a common mistake of `assert mck.not_called()` or `assert mck.called_once_with(...)`'
+    language: pygrep
+    entry: 'assert .*\.(not_called|called_)'
+    types: [python]
+-   id: python-no-log-warn
+    name: use logger.warning(
+    description: 'A quick check for the deprecated `.warn()` method of python loggers'
+    entry: '\.warn\('
+    language: pygrep
+    types: [python]
+-   id: python-use-type-annotations
+    name: type annotations not comments
+    description: 'Enforce that python3.6+ type annotations are used instead of type comments'
+    entry: '# type.*(?<!: ignore)$'
+    language: pygrep
+    types: [python]

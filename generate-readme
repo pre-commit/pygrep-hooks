@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+import yaml
+
+Loader = getattr(yaml, 'CSafeLoader', yaml.SafeLoader)
+
+
+def main() -> int:
+    with open('.pre-commit-hooks.yaml') as f:
+        hooks = yaml.load(f, Loader=Loader)
+
+    with open('README.md') as f:
+        contents = f.read()
+    before, delim, _ = contents.partition('[generated]: # (generated)\n')
+
+    rest = '\n'.join(
+        f'- `{hook["id"]}`: {hook["description"]}' for hook in hooks
+    )
+
+    with open('README.md', 'w') as f:
+        f.write(before + delim + rest + '\n')
+
+    return 0
+
+
+if __name__ == '__main__':
+    exit(main())
