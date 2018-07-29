@@ -13,7 +13,7 @@ def main() -> int:
     before, delim, _ = contents.partition('[generated]: # (generated)\n')
 
     rest = '\n'.join(
-        f'- `{hook["id"]}`: {hook["description"]}' for hook in hooks
+        f'- **`{hook["id"]}`**: {hook["description"]}' for hook in hooks
     )
 
     with open('README.md', 'w') as f:

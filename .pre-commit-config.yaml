@@ -35,5 +35,5 @@ repos:
         entry: ./generate-readme
         language: python
         additional_dependencies: [pyyaml]
-        files: \.pre-commit-hooks.yaml$
+        files: ^(\.pre-commit-hooks.yaml|generate-readme)$
         pass_filenames: false

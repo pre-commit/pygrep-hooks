@@ -24,6 +24,6 @@ For example, a hook which targest python will be called `python-...`.
 ### Provided hooks
 
 [generated]: # (generated)
-- `python-check-mock-methods`: Prevent a common mistake of `assert mck.not_called()` or `assert mck.called_once_with(...)`
-- `python-no-log-warn`: A quick check for the deprecated `.warn()` method of python loggers
-- `python-use-type-annotations`: Enforce that python3.6+ type annotations are used instead of type comments
+- **`python-check-mock-methods`**: Prevent a common mistake of `assert mck.not_called()` or `assert mck.called_once_with(...)`
+- **`python-no-log-warn`**: A quick check for the deprecated `.warn()` method of python loggers
+- **`python-use-type-annotations`**: Enforce that python3.6+ type annotations are used instead of type comments
