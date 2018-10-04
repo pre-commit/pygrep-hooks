@@ -1,7 +1,9 @@
 language: python
 python: 3.6
-install: pip install pre-commit
-script: pre-commit run --all-files
+install: pip install pre-commit pytest
+script:
+    - pytest tests
+    - pre-commit run --all-files
 cache:
     directories:
         - $HOME/.cache/pip
