@@ -10,6 +10,12 @@
     entry: '\.warn\('
     language: pygrep
     types: [python]
+-   id: python-type-checking-without-pragma
+    name: Check TYPE_CHECKING without pragma
+    description: 'Enforce that type check imports always occur with pragma no cover annotation to avoid unnecessary code coverage drops.'
+    entry: 'if TYPE_CHECKING:(?!  # pragma: no cover)'
+    language: pygrep
+    types: [python]
 -   id: python-use-type-annotations
     name: type annotations not comments
     description: 'Enforce that python3.6+ type annotations are used instead of type comments'

@@ -33,3 +33,24 @@ def test_python_use_type_annotations_positive(s):
 )
 def test_python_use_type_annotations_negative(s):
     assert not HOOKS['python-use-type-annotations'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'if TYPE_CHECKING:',
+    )
+)
+def test_python_pragma_no_cover_positive(s):
+    assert HOOKS['python-type-checking-without-pragma'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'x = 1',
+        'if TYPE_CHECKING:  # pragma: no cover',
+    )
+)
+def test_python_pragma_no_cover_negative(s):
+    assert not HOOKS['python-type-checking-without-pragma'].search(s)
