@@ -1,3 +1,9 @@
+-   id: python-check-blanket-noqa
+    name: Check blanket noqa
+    description: 'Enforce that `noqa` annotations always occur with specific codes'
+    entry: '# noqa(?!: )'
+    language: pygrep
+    types: [python]
 -   id: python-check-mock-methods
     name: check for not-real mock methods
     description: 'Prevent a common mistake of `assert mck.not_called()` or `assert mck.called_once_with(...)`'

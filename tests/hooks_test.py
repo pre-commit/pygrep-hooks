@@ -33,3 +33,27 @@ def test_python_use_type_annotations_positive(s):
 )
 def test_python_use_type_annotations_negative(s):
     assert not HOOKS['python-use-type-annotations'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        '# noqa',
+        '# noqa:F401',
+        '# noqa:F401,W203',
+    ),
+)
+def test_python_check_blanket_noqa_positive(s):
+    assert HOOKS['python-check-blanket-noqa'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'x = 1',
+        '# noqa: F401',
+        '# noqa: F401, W203',
+    ),
+)
+def test_python_check_blanket_noqa_negative(s):
+    assert not HOOKS['python-check-blanket-noqa'].search(s)
