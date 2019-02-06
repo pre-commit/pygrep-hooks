@@ -59,21 +59,9 @@ def test_python_check_blanket_noqa_negative(s):
     assert not HOOKS['python-check-blanket-noqa'].search(s)
 
 
-@pytest.mark.parametrize(
-    's',
-    (
-        'eval()',
-    ),
-)
-def test_python_check_positive(s):
-    assert HOOKS['python-noeval'].search(s)
+def test_python_noeval_positive(asdf):
+    assert HOOKS['python-noeval'].search("eval()")
 
 
-@pytest.mark.parametrize(
-    's',
-    (
-        'literal_eval()',
-    ),
-)
-def test_python_check_negative(s):
-    assert not HOOKS['python-noeval'].search(s)
+def test_python_noeval_negative():
+    assert not HOOKS['python-noeval'].search("literal_eval()")
