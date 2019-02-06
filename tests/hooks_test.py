@@ -58,6 +58,7 @@ def test_python_check_blanket_noqa_positive(s):
 def test_python_check_blanket_noqa_negative(s):
     assert not HOOKS['python-check-blanket-noqa'].search(s)
 
+
 @pytest.mark.parametrize(
     's',
     (
@@ -66,6 +67,7 @@ def test_python_check_blanket_noqa_negative(s):
 )
 def test_python_check_positive(s):
     assert HOOKS['python-noeval'].search(s)
+
 
 @pytest.mark.parametrize(
     's',
