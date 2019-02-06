@@ -28,3 +28,9 @@
     entry: ' `[^`]+[^_]`([^_]|$)'
     language: pygrep
     types: [rst]
+-   id: python-noeval
+    name: Check for eval()
+    description: 'A quick check for `eval()` built-in function'
+    entry: '\beval\s*\((.*|\s*\))'
+    language: pygrep
+    types: [python]

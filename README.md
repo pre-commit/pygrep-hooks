@@ -19,7 +19,7 @@ A collection of fast, cheap, regex based pre-commit hooks.
 ### Naming conventions
 
 Where possible, these hooks will be prefixed with the file types they target.
-For example, a hook which targest python will be called `python-...`.
+For example, a hook which targets python will be called `python-...`.
 
 ### Provided hooks
 
@@ -28,4 +28,5 @@ For example, a hook which targest python will be called `python-...`.
 - **`python-check-mock-methods`**: Prevent a common mistake of `assert mck.not_called()` or `assert mck.called_once_with(...)`
 - **`python-no-log-warn`**: A quick check for the deprecated `.warn()` method of python loggers
 - **`python-use-type-annotations`**: Enforce that python3.6+ type annotations are used instead of type comments
+- **`python-noeval`**: Check that `eval()` is not used.
 - **`rst-backticks`**: Detect common mistake of using single backticks when writing rst
