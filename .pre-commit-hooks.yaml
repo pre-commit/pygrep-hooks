@@ -13,7 +13,7 @@
 -   id: python-noeval
     name: Check for eval()
     description: 'A quick check for `eval()` built-in function'
-    entry: '\beval\s*\((.*|\s*\))'
+    entry: '\beval\('
     language: pygrep
     types: [python]
 -   id: python-no-log-warn
