@@ -10,6 +10,12 @@
     language: pygrep
     entry: 'assert .*\.(not_called|called_)'
     types: [python]
+-   id: python-noeval
+    name: Check for eval()
+    description: 'A quick check for `eval()` built-in function'
+    entry: '\beval\s*\((.*|\s*\))'
+    language: pygrep
+    types: [python]
 -   id: python-no-log-warn
     name: use logger.warning(
     description: 'A quick check for the deprecated `.warn()` method of python loggers'
@@ -28,9 +34,3 @@
     entry: ' `[^`]+[^_]`([^_]|$)'
     language: pygrep
     types: [rst]
--   id: python-noeval
-    name: Check for eval()
-    description: 'A quick check for `eval()` built-in function'
-    entry: '\beval\s*\((.*|\s*\))'
-    language: pygrep
-    types: [python]
