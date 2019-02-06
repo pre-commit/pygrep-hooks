@@ -59,7 +59,7 @@ def test_python_check_blanket_noqa_negative(s):
     assert not HOOKS['python-check-blanket-noqa'].search(s)
 
 
-def test_python_noeval_positive(asdf):
+def test_python_noeval_positive():
     assert HOOKS['python-noeval'].search("eval()")
 
 
