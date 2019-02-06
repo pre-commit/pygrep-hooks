@@ -1,5 +1,5 @@
 -   id: python-check-blanket-noqa
-    name: Check blanket noqa
+    name: check blanket noqa
     description: 'Enforce that `noqa` annotations always occur with specific codes'
     entry: '# noqa(?!: )'
     language: pygrep
@@ -11,7 +11,7 @@
     entry: 'assert .*\.(not_called|called_)'
     types: [python]
 -   id: python-noeval
-    name: Check for eval()
+    name: check for eval()
     description: 'A quick check for `eval()` built-in function'
     entry: '\beval\('
     language: pygrep
