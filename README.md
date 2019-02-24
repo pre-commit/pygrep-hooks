@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pre-commit/pygrep-hooks.svg?branch=master)](https://travis-ci.org/pre-commit/pygrep-hooks)
+[![Build Status](https://dev.azure.com/asottile/asottile/_apis/build/status/pre-commit.pygrep-hooks?branchName=master)](https://dev.azure.com/asottile/asottile/_build/latest?definitionId=9&branchName=master)
 
 pygrep-hooks
 ============
