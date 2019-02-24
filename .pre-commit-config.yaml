@@ -43,3 +43,10 @@ repos:
         additional_dependencies: [pyyaml]
         files: ^(\.pre-commit-hooks.yaml|generate-readme)$
         pass_filenames: false
+    -   id: run-tests
+        name: run tests
+        entry: pytest tests
+        language: python
+        additional_dependencies: [pre-commit, pytest]
+        always_run: true
+        pass_filenames: false
