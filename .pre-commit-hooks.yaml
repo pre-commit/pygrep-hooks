@@ -7,7 +7,7 @@
 -   id: python-check-mock-methods
     name: check for not-real mock methods
     description: >
-        Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)` and 
+        Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)` and
         and `mck.assert_called`.
     language: pygrep
     entry: '(assert .*\.(not_called|called_)|\.assert_(not_called|called\w*)($|[^(]))'

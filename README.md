@@ -25,7 +25,8 @@ For example, a hook which targest python will be called `python-...`.
 
 [generated]: # (generated)
 - **`python-check-blanket-noqa`**: Enforce that `noqa` annotations always occur with specific codes
-- **`python-check-mock-methods`**: Prevent a common mistake of `assert mck.not_called()` or `assert mck.called_once_with(...)`
+- **`python-check-mock-methods`**: Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)` and and `mck.assert_called`.
+
 - **`python-no-log-warn`**: A quick check for the deprecated `.warn()` method of python loggers
 - **`python-use-type-annotations`**: Enforce that python3.6+ type annotations are used instead of type comments
 - **`rst-backticks`**: Detect common mistake of using single backticks when writing rst
