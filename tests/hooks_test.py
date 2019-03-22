@@ -57,3 +57,31 @@ def test_python_check_blanket_noqa_positive(s):
 )
 def test_python_check_blanket_noqa_negative(s):
     assert not HOOKS['python-check-blanket-noqa'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'assert my_mock.not_called()',
+        'assert my_mock.called()',
+        'assert my_mock.called_once_with()',
+        'my_mock.assert_not_called',
+        'my_mock.assert_called',
+        'my_mock.assert_called_once_with',
+    ),
+)
+def test_python_check_mock_methods_positive(s):
+    assert HOOKS['python-check-mock-methods'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'assert my_mock.call_count == 1',
+        'my_mock.assert_not_called()',
+        'my_mock.assert_called()',
+        'my_mock.assert_called_once_with()',
+    ),
+)
+def test_python_check_mock_methods_negative(s):
+    assert not HOOKS['python-check-mock-methods'].search(s)
