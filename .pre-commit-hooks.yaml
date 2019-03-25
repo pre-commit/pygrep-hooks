@@ -6,9 +6,26 @@
     types: [python]
 -   id: python-check-mock-methods
     name: check for not-real mock methods
-    description: 'Prevent a common mistake of `assert mck.not_called()` or `assert mck.called_once_with(...)`'
+    description: >-
+        Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)`
+        and `mck.assert_called`.
     language: pygrep
-    entry: 'assert .*\.(not_called|called_)'
+    entry: >
+        (?x)(
+            assert .*\.(
+                not_called|
+                called_
+            )|
+            \.assert_(
+                any_call|
+                called|
+                called_once|
+                called_once_with|
+                called_with|
+                has_calls|
+                not_called
+            )($|[^(\w])
+        )
     types: [python]
 -   id: python-no-log-warn
     name: use logger.warning(
