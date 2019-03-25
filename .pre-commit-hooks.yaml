@@ -10,7 +10,27 @@
         Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)` and
         and `mck.assert_called`.
     language: pygrep
-    entry: '(assert .*\.(not_called|called_)|\.assert_(not_called|called|called_\w+)($|[^(\w]))'
+    entry: >
+      (?x)(
+        assert .*\.(
+          any_call
+          |called_once
+          |called_once_with
+          |called_with
+          |has_calls
+          |not_called
+        )
+        |
+        \.assert_(
+          any_call
+          |called
+          |called_once
+          |called_once_with
+          |called_with
+          |has_calls
+          |not_called
+        )($|\s)
+      )
     types: [python]
 -   id: python-no-log-warn
     name: use logger.warning(
