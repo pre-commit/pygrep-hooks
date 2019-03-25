@@ -11,26 +11,25 @@
         and `mck.assert_called`.
     language: pygrep
     entry: >
-      (?x)(
-        assert .*\.(
-          any_call
-          |called_once
-          |called_once_with
-          |called_with
-          |has_calls
-          |not_called
+        (?x)(
+            assert .*\.(
+                any_call|
+                called_once|
+                called_once_with|
+                called_with|
+                has_calls|
+                not_called
+            )|
+            \.assert_(
+                any_call|
+                called|
+                called_once|
+                called_once_with|
+                called_with|
+                has_calls|
+                not_called
+            )($|[^(\w])
         )
-        |
-        \.assert_(
-          any_call
-          |called
-          |called_once
-          |called_once_with
-          |called_with
-          |has_calls
-          |not_called
-        )($|\s)
-      )
     types: [python]
 -   id: python-no-log-warn
     name: use logger.warning(
