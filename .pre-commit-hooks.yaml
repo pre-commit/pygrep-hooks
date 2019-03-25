@@ -13,12 +13,8 @@
     entry: >
         (?x)(
             assert .*\.(
-                any_call|
-                called_once|
-                called_once_with|
-                called_with|
-                has_calls|
-                not_called
+                not_called|
+                called_
             )|
             \.assert_(
                 any_call|
