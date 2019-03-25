@@ -63,7 +63,6 @@ def test_python_check_blanket_noqa_negative(s):
     's',
     (
         'assert my_mock.not_called()',
-        'assert my_mock.called()',
         'assert my_mock.called_once_with()',
         'my_mock.assert_not_called',
         'my_mock.assert_called',
@@ -78,6 +77,7 @@ def test_python_check_mock_methods_positive(s):
     's',
     (
         'assert my_mock.call_count == 1',
+        'assert my_mock.called',
         'my_mock.assert_not_called()',
         'my_mock.assert_called()',
         'my_mock.assert_called_once_with()',
