@@ -17,7 +17,7 @@ HOOKS = {h['id']: re.compile(h['entry']) for h in load_manifest(MANIFEST_FILE)}
     ),
 )
 def test_python_use_type_annotations_positive(s):
-    assert HOOKS['python-use-type-annotations'].search(s)
+    assert HOOKS['python-use-type-annotations'].search(s) is not None
 
 
 @pytest.mark.parametrize(
@@ -32,7 +32,7 @@ def test_python_use_type_annotations_positive(s):
     ),
 )
 def test_python_use_type_annotations_negative(s):
-    assert not HOOKS['python-use-type-annotations'].search(s)
+    assert not HOOKS['python-use-type-annotations'].search(s) is not None
 
 
 @pytest.mark.parametrize(
@@ -44,7 +44,7 @@ def test_python_use_type_annotations_negative(s):
     ),
 )
 def test_python_check_blanket_noqa_positive(s):
-    assert HOOKS['python-check-blanket-noqa'].search(s)
+    assert HOOKS['python-check-blanket-noqa'].search(s) is not None
 
 
 @pytest.mark.parametrize(
@@ -56,7 +56,7 @@ def test_python_check_blanket_noqa_positive(s):
     ),
 )
 def test_python_check_blanket_noqa_negative(s):
-    assert not HOOKS['python-check-blanket-noqa'].search(s)
+    assert HOOKS['python-check-blanket-noqa'].search(s) is None
 
 
 @pytest.mark.parametrize(
@@ -70,7 +70,7 @@ def test_python_check_blanket_noqa_negative(s):
     ),
 )
 def test_python_check_mock_methods_positive(s):
-    assert HOOKS['python-check-mock-methods'].search(s)
+    assert HOOKS['python-check-mock-methods'].search(s) is not None
 
 
 @pytest.mark.parametrize(
@@ -84,4 +84,4 @@ def test_python_check_mock_methods_positive(s):
     ),
 )
 def test_python_check_mock_methods_negative(s):
-    assert not HOOKS['python-check-mock-methods'].search(s)
+    assert HOOKS['python-check-mock-methods'].search(s) is None
