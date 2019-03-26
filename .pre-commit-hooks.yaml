@@ -35,7 +35,7 @@
     types: [python]
 -   id: python-private-access-enforcement
     name: don't access other classes's private members
-    description: 'Allow referencing self._whatever but not something._whatever; disable with #private'
+    description: 'Allow referencing self._whatever but not something._whatever; disable with `# private`'
     entry: (?<!\Wself)(?<![)])[.]_[^_](?!.*#\s*private)
     language: pygrep
     types: [python]
