@@ -87,6 +87,7 @@ def test_python_check_mock_methods_positive(s):
 def test_python_check_mock_methods_negative(s):
     assert not HOOKS['python-check-mock-methods'].search(s)
 
+
 @pytest.mark.parametrize(
     's',
     (
@@ -94,13 +95,16 @@ def test_python_check_mock_methods_negative(s):
         'foo._bar()',
         'foo._bar ==',
         'foo._bar=',
-        'self._bar', # At beginning of string, presumably not in a method with normal 'self'
         'fooself._bar',
-        'foo._bar == private', # Non-comment instance of 'private' disabler comment
+        # At beginning of string, presumably not in a method with normal 'self'
+        'self._bar',
+        # Non-comment instance of 'private' disabler comment
+        'foo._bar == private',
     ),
 )
 def test_python_private_access_enforcement_positive(s):
     assert HOOKS['python-private-access-enforcement'].search(s)
+
 
 @pytest.mark.parametrize(
     's',
@@ -120,5 +124,3 @@ def test_python_private_access_enforcement_positive(s):
 )
 def test_python_private_access_enforcement_negative(s):
     assert not HOOKS['python-private-access-enforcement'].search(s)
-
-
