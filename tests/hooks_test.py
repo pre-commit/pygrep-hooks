@@ -86,3 +86,11 @@ def test_python_check_mock_methods_positive(s):
 )
 def test_python_check_mock_methods_negative(s):
     assert not HOOKS['python-check-mock-methods'].search(s)
+
+
+def test_python_noeval_positive():
+    assert HOOKS['python-no-eval'].search('eval("3 + 4")')
+
+
+def test_python_noeval_negative():
+    assert not HOOKS['python-no-eval'].search('literal_eval("{1: 2}")')
