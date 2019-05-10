@@ -1,5 +1,5 @@
 -   id: python-check-blanket-noqa
-    name: Check blanket noqa
+    name: check blanket noqa
     description: 'Enforce that `noqa` annotations always occur with specific codes'
     entry: '# noqa(?!: )'
     language: pygrep

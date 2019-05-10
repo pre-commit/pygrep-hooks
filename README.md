@@ -19,7 +19,7 @@ A collection of fast, cheap, regex based pre-commit hooks.
 ### Naming conventions
 
 Where possible, these hooks will be prefixed with the file types they target.
-For example, a hook which targest python will be called `python-...`.
+For example, a hook which targets python will be called `python-...`.
 
 ### Provided hooks
 
