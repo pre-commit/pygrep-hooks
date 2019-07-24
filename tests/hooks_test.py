@@ -99,9 +99,8 @@ def test_python_noeval_negative():
 @pytest.mark.parametrize(
     "s",
     (
-        'log.warn("help")',
-        'logger.warn("well warn dresses found")',
-        'logging.warn("to be or not to be")',
+        'log.warn("this is depreciated")',
+        '.warn(this will also be caught',
     ),
 )
 def test_python_no_log_warn_positive(s):
@@ -111,14 +110,10 @@ def test_python_no_log_warn_positive(s):
 @pytest.mark.parametrize(
     "s",
     (
-        "warnings.warn()",
+        "warnings.warn('this is ok')",
         'log.warning("this is ok")',
-        'warnings.warn("bee be bad")',
-        'print("if warn is just somewhere random")',
-        'warn("test from warnings import warn")',
-        "xx1234warning0394warn",
         "from warnings import warn",
-        "this does not have a trigger word",
+        'warn("by itself is also ok")',
     ),
 )
 def test_python_no_log_warn_negative(s):
