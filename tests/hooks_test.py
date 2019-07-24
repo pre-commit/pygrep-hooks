@@ -94,3 +94,32 @@ def test_python_noeval_positive():
 
 def test_python_noeval_negative():
     assert not HOOKS['python-no-eval'].search('literal_eval("{1: 2}")')
+
+
+@pytest.mark.parametrize(
+    "s",
+    (
+        'log.warn("help")',
+        'logger.warn("well warn dresses found")',
+        'logging.warn("to be or not to be")',
+    ),
+)
+def test_python_no_log_warn_positive(s):
+    assert HOOKS["python-no-log-warn"].search(s)
+
+
+@pytest.mark.parametrize(
+    "s",
+    (
+        "warnings.warn()",
+        'log.warning("this is ok")',
+        'warnings.warn("bee be bad")',
+        'print("if warn is just somewhere random")',
+        'warn("test from warnings import warn")',
+        "xx1234warning0394warn",
+        "from warnings import warn",
+        "this does not have a trigger word",
+    ),
+)
+def test_python_no_log_warn_negative(s):
+    assert not HOOKS["python-no-log-warn"].search(s)

@@ -36,7 +36,7 @@
 -   id: python-no-log-warn
     name: use logger.warning(
     description: 'A quick check for the deprecated `.warn()` method of python loggers'
-    entry: '\.warn\('
+    entry: '(?<!warnings)\.warn\('
     language: pygrep
     types: [python]
 -   id: python-use-type-annotations
