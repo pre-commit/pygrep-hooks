@@ -94,3 +94,26 @@ def test_python_noeval_positive():
 
 def test_python_noeval_negative():
     assert not HOOKS['python-no-eval'].search('literal_eval("{1: 2}")')
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'log.warn("this is deprecated")',
+    ),
+)
+def test_python_no_log_warn_positive(s):
+    assert HOOKS['python-no-log-warn'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        "warnings.warn('this is ok')",
+        'log.warning("this is ok")',
+        'from warnings import warn',
+        'warn("by itself is also ok")',
+    ),
+)
+def test_python_no_log_warn_negative(s):
+    assert not HOOKS['python-no-log-warn'].search(s)
