@@ -97,23 +97,23 @@ def test_python_noeval_negative():
 
 
 @pytest.mark.parametrize(
-    "s",
+    's',
     (
         'log.warn("this is deprecated")',
     ),
 )
 def test_python_no_log_warn_positive(s):
-    assert HOOKS["python-no-log-warn"].search(s)
+    assert HOOKS['python-no-log-warn'].search(s)
 
 
 @pytest.mark.parametrize(
-    "s",
+    's',
     (
         "warnings.warn('this is ok')",
         'log.warning("this is ok")',
-        "from warnings import warn",
+        'from warnings import warn',
         'warn("by itself is also ok")',
     ),
 )
 def test_python_no_log_warn_negative(s):
-    assert not HOOKS["python-no-log-warn"].search(s)
+    assert not HOOKS['python-no-log-warn'].search(s)
