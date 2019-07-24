@@ -100,7 +100,6 @@ def test_python_noeval_negative():
     "s",
     (
         'log.warn("this is depreciated")',
-        '.warn(this will also be caught',
     ),
 )
 def test_python_no_log_warn_positive(s):
