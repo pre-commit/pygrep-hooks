@@ -99,7 +99,7 @@ def test_python_noeval_negative():
 @pytest.mark.parametrize(
     "s",
     (
-        'log.warn("this is depreciated")',
+        'log.warn("this is deprecated")',
     ),
 )
 def test_python_no_log_warn_positive(s):
