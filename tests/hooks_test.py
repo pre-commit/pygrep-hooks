@@ -39,6 +39,7 @@ def test_python_use_type_annotations_negative(s):
     's',
     (
         '# noqa',
+        '# NOQA',
         '# noqa:F401',
         '# noqa:F401,W203',
     ),
