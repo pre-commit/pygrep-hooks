@@ -16,6 +16,8 @@
                 not_called|
                 called_
             )|
+            # ''.join(rf'(?<!\b{s})' for s in dir(mock) if s.endswith('Mock')))
+            (?<!\bAsyncMock)(?<!\bMagicMock)(?<!\bMock)(?<!\bNonCallableMagicMock)(?<!\bNonCallableMock)(?<!\bPropertyMock)
             \.assert_(
                 any_call|
                 called|
