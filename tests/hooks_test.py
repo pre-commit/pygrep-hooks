@@ -69,6 +69,7 @@ def test_python_check_blanket_noqa_negative(s):
         'my_mock.assert_called',
         'my_mock.assert_called_once_with',
         'my_mock.assert_called_once_with# noqa',
+        'MyMock.assert_called_once_with',
     ),
 )
 def test_python_check_mock_methods_positive(s):
@@ -83,6 +84,8 @@ def test_python_check_mock_methods_positive(s):
         'my_mock.assert_not_called()',
         'my_mock.assert_called()',
         'my_mock.assert_called_once_with()',
+        '"""like :meth:`Mock.assert_called_once_with`"""',
+        '"""like :meth:`MagicMock.assert_called_once_with`"""',
     ),
 )
 def test_python_check_mock_methods_negative(s):
