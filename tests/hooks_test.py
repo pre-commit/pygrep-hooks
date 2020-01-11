@@ -125,7 +125,7 @@ def test_python_no_log_warn_negative(s):
 @pytest.mark.parametrize(
     's',
     (
-        "`[code]`",
+        '`[code]`',
         'i like `_kitty`',
     ),
 )
@@ -135,7 +135,7 @@ def test_python_rst_backticks_positive(s):
 @pytest.mark.parametrize(
     's',
     (
-        " ``[code]``",
+        ' ``[code]``',
         'i like _`kitty`',
         'i like `_`',
         'i like `kitty`_',
