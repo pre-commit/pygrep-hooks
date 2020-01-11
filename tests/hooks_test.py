@@ -121,3 +121,27 @@ def test_python_no_log_warn_positive(s):
 )
 def test_python_no_log_warn_negative(s):
     assert not HOOKS['python-no-log-warn'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        '`[code]`',
+        'i like `_kitty`',
+    ),
+)
+def test_python_rst_backticks_positive(s):
+    assert HOOKS['rst-backticks'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        ' ``[code]``',
+        'i like _`kitty`',
+        'i like `_`',
+        'i like `kitty`_',
+    ),
+)
+def test_python_rst_backticks_negative(s):
+    assert not HOOKS['rst-backticks'].search(s)
