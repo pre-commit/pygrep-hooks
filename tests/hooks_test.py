@@ -145,3 +145,23 @@ def test_python_rst_backticks_positive(s):
 )
 def test_python_rst_backticks_negative(s):
     assert not HOOKS['rst-backticks'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        str(b'\x80abc', errors='replace'),
+    ),
+)
+def test_text_unicode_replacement_char_positive(s):
+    assert HOOKS['text-unicode-replacement-char'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'foo',
+    ),
+)
+def test_text_unicode_replacement_char_negative(s):
+    assert not HOOKS['text-unicode-replacement-char'].search(s)
