@@ -130,6 +130,9 @@ def test_python_no_log_warn_negative(s):
     (
         '`[code]`',
         'i like `_kitty`',
+        'i like `_`',
+        '`a`',
+        '`cd`',
     ),
 )
 def test_python_rst_backticks_positive(s):
@@ -141,8 +144,9 @@ def test_python_rst_backticks_positive(s):
     (
         ' ``[code]``',
         'i like _`kitty`',
-        'i like `_`',
         'i like `kitty`_',
+        '``b``',
+        '``ef``',
     ),
 )
 def test_python_rst_backticks_negative(s):
