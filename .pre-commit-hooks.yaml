@@ -53,6 +53,12 @@
     entry: '(^| )`[^`]+`([^_]|$)'
     language: pygrep
     types: [rst]
+-   id: rst-inline-touching-normal
+    name: rst ``inline code`` next to normal text
+    description: 'Detect mistake of inline code touching normal text in rst'
+    entry: '\w``\w'
+    language: pygrep
+    types: [rst]
 -   id: text-unicode-replacement-char
     name: no unicode replacement chars
     description: 'Forbid files which have a UTF-8 Unicode replacement character'

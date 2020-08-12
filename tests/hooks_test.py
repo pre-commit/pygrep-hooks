@@ -156,6 +156,44 @@ def test_python_rst_backticks_negative(s):
 @pytest.mark.parametrize(
     's',
     (
+        '``PyMem_Realloc()`` indirectly call``PyObject_Malloc()`` and',
+        'This PEP proposes that ``bytes`` and ``bytearray``gain an optimised',
+        'Reading this we first see the``break``, which obviously applies to',
+        'for using``long_description`` and a corresponding',
+        '``inline`` normal``inline',
+        '``inline``normal ``inline',
+        '``inline``normal',
+        '``inline``normal``inline',
+        'normal ``inline``normal',
+        'normal``inline`` normal',
+        'normal``inline``',
+        'normal``inline``normal',
+    ),
+)
+def test_python_rst_inline_touching_normal_positive(s):
+    assert HOOKS['rst-inline-touching-normal'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        '``PyMem_Realloc()`` indirectly call ``PyObject_Malloc()`` and',
+        'This PEP proposes that ``bytes`` and ``bytearray`` gain an optimised',
+        'Reading this we first see the ``break``, which obviously applies to',
+        'for using ``long_description`` and a corresponding',
+        '``inline`` normal ``inline',
+        '``inline`` normal',
+        'normal ``inline`` normal',
+        'normal ``inline``',
+    ),
+)
+def test_python_rst_inline_touching_normal_negative(s):
+    assert not HOOKS['rst-inline-touching-normal'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
         str(b'\x80abc', errors='replace'),
     ),
 )
