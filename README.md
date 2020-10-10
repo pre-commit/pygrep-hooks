@@ -32,7 +32,5 @@ For example, a hook which targets python will be called `python-...`.
 - **`rst-backticks`**: Detect common mistake of using single backticks when writing rst
 - **`rst-inline-touching-normal`**: Detect mistake of inline code touching normal text in rst
 - **`text-unicode-replacement-char`**: Forbid files which have a UTF-8 Unicode replacement character
-- **`ts-no-debugger`**: A quick check for the `debugger` statement
-- **`ts-no-console`**: A quick check for the use of `console` built-in functions
-- **`ts-no-window`**: A quick check for the use of the `window` object
-- **`ts-no-focus-ignore`**: A quick check for the use of `fit()`, `xit()`, `fdescribe()` and `xdescribe()` test functions
+- **`ts-no-debugger`**: Prevent use of `debugger` statement
+- **`ts-no-focus-ignore`**: Forbid use of `fit()`, `xit()`, `fdescribe()` and `xdescribe()` test functions

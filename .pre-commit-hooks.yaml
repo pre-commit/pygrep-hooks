@@ -67,25 +67,13 @@
     types: [text]
 -   id: ts-no-debugger
     name: check for debbuger
-    description: 'A quick check for the `debugger` statement'
+    description: 'Prevent use of `debugger` statement'
     language: pygrep
     entry: '\bdebugger\b'
     types: [ts]
--   id: ts-no-console
-    name: check console functions
-    description: 'A quick check for the use of `console` built-in functions'
-    language: pygrep
-    entry: '\bconsole\.'
-    types: [ts]
--   id: ts-no-window
-    name: check window access
-    description: 'A quick check for the use of the `window` object'
-    language: pygrep
-    entry: '\bwindow\b'
-    types: [ts]
 -   id: ts-no-focus-ignore
     name: check use of focus and ignore of tests
-    description: 'A quick check for the use of `fit()`, `xit()`, `fdescribe()` and `xdescribe()` test functions'
+    description: 'Forbid use of `fit()`, `xit()`, `fdescribe()` and `xdescribe()` test functions'
     language: pygrep
-    entry: '\b[fx](?:describe|it)\s*\('
+    entry: '\b(?:fit|xit|fdescribe|xdescribe)\s*\('
     types: [ts]
