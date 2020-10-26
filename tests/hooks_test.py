@@ -209,3 +209,25 @@ def test_text_unicode_replacement_char_positive(s):
 )
 def test_text_unicode_replacement_char_negative(s):
     assert not HOOKS['text-unicode-replacement-char'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        '    .. warning:',
+        '.. warning:',
+    ),
+)
+def test_rst_directive_colons_positive(s):
+    assert HOOKS['rst-directive-colons'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        '.. warning::',
+        '.. code:: python',
+    ),
+)
+def test_rst_directive_colons_negative(s):
+    assert not HOOKS['rst-directive-colons'].search(s)
