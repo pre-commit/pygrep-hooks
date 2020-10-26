@@ -231,3 +231,7 @@ def test_rst_directive_colons_positive(s):
 )
 def test_rst_directive_colons_negative(s):
     assert not HOOKS['rst-directive-colons'].search(s)
+
+
+def test_that_hooks_are_sorted():
+    assert list(HOOKS) == sorted(HOOKS)
