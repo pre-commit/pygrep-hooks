@@ -44,7 +44,7 @@
 -   id: python-use-type-annotations
     name: type annotations not comments
     description: 'Enforce that python3.6+ type annotations are used instead of type comments'
-    entry: '# type(?!: *ignore([^a-zA-Z0-9]|$))'
+    entry: '# type(?!: *ignore([^a-zA-Z0-9]|$))(?!\w)'
     language: pygrep
     types: [python]
 -   id: rst-backticks
