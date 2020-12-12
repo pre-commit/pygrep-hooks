@@ -1,6 +1,6 @@
 -   id: python-check-blanket-noqa
     name: check blanket noqa
-    description: 'Enforce that `noqa` annotations always occur with specific codes'
+    description: 'Enforce that `noqa` annotations always occur with specific codes. Sample annotations: `# noqa: F401`, `# noqa: F401,W203`'
     entry: '(?i)# noqa(?!: )'
     language: pygrep
     types: [python]

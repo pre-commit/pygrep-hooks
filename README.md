@@ -24,7 +24,7 @@ For example, a hook which targets python will be called `python-...`.
 ### Provided hooks
 
 [generated]: # (generated)
-- **`python-check-blanket-noqa`**: Enforce that `noqa` annotations always occur with specific codes
+- **`python-check-blanket-noqa`**: Enforce that `noqa` annotations always occur with specific codes. Sample annotations: `# noqa: F401`, `# noqa: F401,W203`
 - **`python-check-mock-methods`**: Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)` and `mck.assert_called`.
 - **`python-no-eval`**: A quick check for the `eval()` built-in function
 - **`python-no-log-warn`**: A quick check for the deprecated `.warn()` method of python loggers
