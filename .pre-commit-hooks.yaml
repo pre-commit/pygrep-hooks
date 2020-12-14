@@ -52,7 +52,7 @@
     description: 'Detect common mistake of using single backticks when writing rst'
     entry: '(^| )`[^`]+`([^_]|$)'
     language: pygrep
-    types: [rst]
+    types: [text]
 -   id: rst-directive-colons
     name: rst directives end with two colons
     description: 'Detect mistake of rst directive not ending with double colon'
@@ -64,7 +64,7 @@
     description: 'Detect mistake of inline code touching normal text in rst'
     entry: '\w``\w'
     language: pygrep
-    types: [rst]
+    types: [text]
 -   id: text-unicode-replacement-char
     name: no unicode replacement chars
     description: 'Forbid files which have a UTF-8 Unicode replacement character'
