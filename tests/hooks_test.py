@@ -133,6 +133,8 @@ def test_python_no_log_warn_negative(s):
         'i like `_`',
         '`a`',
         '`cd`',
+        ' `indented` literal block',
+        '> quoted `literal` block',
     ),
 )
 def test_python_rst_backticks_positive(s):
@@ -147,6 +149,7 @@ def test_python_rst_backticks_positive(s):
         'i like `kitty`_',
         '``b``',
         '``ef``',
+        '    indented `literal` block',
     ),
 )
 def test_python_rst_backticks_negative(s):
