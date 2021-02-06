@@ -50,7 +50,7 @@
 -   id: rst-backticks
     name: rst ``code`` is two backticks
     description: 'Detect common mistake of using single backticks when writing rst'
-    entry: '(^| )`[^`]+`([^_]|$)'
+    entry: '^(?!    ).*(^| )`[^`]+`([^_]|$)'
     language: pygrep
     types: [rst]
 -   id: rst-directive-colons
