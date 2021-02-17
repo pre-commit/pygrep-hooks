@@ -102,6 +102,14 @@ def test_python_noeval_negative():
     assert not HOOKS['python-no-eval'].search('literal_eval("{1: 2}")')
 
 
+def test_python_no_embed_positive():
+    assert HOOKS['python-no-ipython-embed'].search('embed()')
+
+
+def test_python_no_embed_negative():
+    assert not HOOKS['python-no-ipython-embed'].search('alt_embed()')
+
+
 @pytest.mark.parametrize(
     's',
     (

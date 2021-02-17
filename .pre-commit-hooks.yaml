@@ -29,6 +29,12 @@
             )($|[^(\w])
         )
     types: [python]
+-   id: python-no-ipython-embed
+    name: check for embed()
+    description: 'A quick check for the ipython `embed()` function'
+    entry: '\bembed\('
+    language: pygrep
+    types: [python]
 -   id: python-no-eval
     name: check for eval()
     description: 'A quick check for the `eval()` built-in function'
