@@ -58,7 +58,7 @@
     description: 'Detect mistake of rst directive not ending with double colon'
     entry: '^\s*\.\. [a-z]+:$'
     language: pygrep
-    types: [text]
+    types: [rst]
 -   id: rst-inline-touching-normal
     name: rst ``inline code`` next to normal text
     description: 'Detect mistake of inline code touching normal text in rst'
