@@ -31,6 +31,8 @@ def test_python_use_type_annotations_positive(s):
         'x = 1  # type: ignore  # noqa',
         'x = 1  # type: ignore[type-mismatch]',
         'x = 1  # type: ignore=E123',
+        '# type of variable is int',
+        '# type_of_variable = int',
     ),
 )
 def test_python_use_type_annotations_negative(s):
