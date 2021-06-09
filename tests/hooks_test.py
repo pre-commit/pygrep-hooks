@@ -65,6 +65,34 @@ def test_python_check_blanket_noqa_negative(s):
 @pytest.mark.parametrize(
     's',
     (
+        'x = 1  # type: ignore',
+        'x = 1  # type ignore',
+        'x = 1  # type:ignore',
+        'x = 1  # type ignore  # noqa',
+    ),
+)
+def test_python_check_blanket_type_ignore_positive(s):
+    assert HOOKS['python-check-blanket-type-ignore'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'x = 1',
+        'x = 1  # type: ignore[attr-defined]',
+        'x = 1  # type: ignore[attr-defined, name-defined]',
+        'x = 1  # type: ignore[type-mismatch]  # noqa',
+        'x = 1  # type: Union[int, str]',
+        'x = 1  # type: ignoreme',
+    ),
+)
+def test_python_check_blanket_type_ignore_negative(s):
+    assert not HOOKS['python-check-blanket-type-ignore'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
         'assert my_mock.not_called()',
         'assert my_mock.called_once_with()',
         'my_mock.assert_not_called',
