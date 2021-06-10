@@ -10,7 +10,7 @@ A collection of fast, cheap, regex based pre-commit hooks.
 
 ```yaml
 -   repo: https://github.com/pre-commit/pygrep-hooks
-    rev: v1.8.0  # Use the ref you want to point at
+    rev: v1.9.0  # Use the ref you want to point at
     hooks:
     -   id: python-use-type-annotations
     # ...
