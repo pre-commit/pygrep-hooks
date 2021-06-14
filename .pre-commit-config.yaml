@@ -35,6 +35,7 @@ repos:
     rev: v0.902
     hooks:
     -   id: mypy
+        additional_dependencies: [types-all]
 -   repo: local
     hooks:
     -   id: generate-readme
