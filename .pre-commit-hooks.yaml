@@ -1,3 +1,9 @@
+-   id: inclusive-naming-check
+    name: use inclusive naming
+    description: 'Detect non-inclusive language. See https://inclusivenaming.org/ for alternatives.'
+    entry: 'dummy|whitelist|blacklist|sanity|slave'
+    language: pygrep
+    types: [text]
 -   id: python-check-blanket-noqa
     name: check blanket noqa
     description: 'Enforce that `noqa` annotations always occur with specific codes. Sample annotations: `# noqa: F401`, `# noqa: F401,W203`'

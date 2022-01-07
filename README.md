@@ -24,6 +24,7 @@ For example, a hook which targets python will be called `python-...`.
 ### Provided hooks
 
 [generated]: # (generated)
+- **`inclusive-naming-check`**: Detect non-inclusive language. See https://inclusivenaming.org/ for alternatives.
 - **`python-check-blanket-noqa`**: Enforce that `noqa` annotations always occur with specific codes. Sample annotations: `# noqa: F401`, `# noqa: F401,W203`
 - **`python-check-blanket-type-ignore`**: Enforce that `# type: ignore` annotations always occur with specific codes. Sample annotations: `# type: ignore[attr-defined]`, `# type: ignore[attr-defined, name-defined]`
 - **`python-check-mock-methods`**: Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)` and `mck.assert_called`.

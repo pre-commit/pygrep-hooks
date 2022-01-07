@@ -10,6 +10,20 @@ HOOKS = {h['id']: re.compile(h['entry']) for h in load_manifest(MANIFEST_FILE)}
 @pytest.mark.parametrize(
     's',
     (
+        'sanity check',
+        'dummy code',
+        'use a whitelist',
+        'a blacklisted term',
+        'a slave process',
+    ),
+)
+def test_inclusive_naming_check(s):
+    assert HOOKS['inclusive-naming-check'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
         'x = 1 # type: ignoreme',
         'x = 1  # type: int',
         'x = 1  # type int',
