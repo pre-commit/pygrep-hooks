@@ -38,7 +38,7 @@
 -   id: python-no-eval
     name: check for eval()
     description: 'A quick check for the `eval()` built-in function'
-    entry: '\beval\('
+    entry: '(?<!\.)\beval\('
     language: pygrep
     types: [python]
 -   id: python-no-log-warn

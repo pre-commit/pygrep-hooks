@@ -130,6 +130,7 @@ def test_python_noeval_positive():
 
 def test_python_noeval_negative():
     assert not HOOKS['python-no-eval'].search('literal_eval("{1: 2}")')
+    assert not HOOKS['python-no-eval'].search('foo.eval()')
 
 
 @pytest.mark.parametrize(
