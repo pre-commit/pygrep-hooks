@@ -158,6 +158,28 @@ def test_python_no_log_warn_negative(s):
 @pytest.mark.parametrize(
     's',
     (
+        'print("3 + 4")',
+        'print(var, end="")',
+    ),
+)
+def test_python_no_print_positive(s):
+    assert HOOKS['python-no-print'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'logging.log("print")',
+        'foo_print("{1: 2}")',
+    ),
+)
+def test_python_no_print_negative(s):
+    assert not HOOKS['python-no-print'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
         '`[code]`',
         'i like `_kitty`',
         'i like `_`',

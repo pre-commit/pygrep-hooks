@@ -29,6 +29,7 @@ For example, a hook which targets python will be called `python-...`.
 - **`python-check-mock-methods`**: Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)` and `mck.assert_called`.
 - **`python-no-eval`**: A quick check for the `eval()` built-in function
 - **`python-no-log-warn`**: A quick check for the deprecated `.warn()` method of python loggers
+- **`python-no-print`**: A quick check for the `print()` built-in function
 - **`python-use-type-annotations`**: Enforce that python3.6+ type annotations are used instead of type comments
 - **`rst-backticks`**: Detect common mistake of using single backticks when writing rst
 - **`rst-directive-colons`**: Detect mistake of rst directive not ending with double colon

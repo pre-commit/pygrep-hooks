@@ -47,6 +47,12 @@
     entry: '(?<!warnings)\.warn\('
     language: pygrep
     types: [python]
+-   id: python-no-print
+    name: check for print()
+    description: 'A quick check for the `print()` built-in function'
+    entry: '\bprint\('
+    language: pygrep
+    types: [python]
 -   id: python-use-type-annotations
     name: type annotations not comments
     description: 'Enforce that python3.6+ type annotations are used instead of type comments'
