@@ -233,6 +233,16 @@ def test_python_rst_inline_touching_normal_negative(s):
 def test_text_unicode_replacement_char_positive(s):
     assert HOOKS['text-unicode-replacement-char'].search(s)
 
+@pytest.mark.parametrize(
+    's',
+    (
+        "set_trace()",
+        "breakpoint()"
+    ),
+)
+def test_python_no_calls_to_debugger(s):
+    assert HOOKS['python-no-calls-to-debugger'].search(s)
+
 
 @pytest.mark.parametrize(
     's',

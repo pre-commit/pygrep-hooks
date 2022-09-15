@@ -35,6 +35,12 @@
             )($|[^(\w])
         )
     types: [python]
+-   id: python-no-calls-to-debugger
+    name: no calls to debugger in commited code
+    description: 'Forbids `set_trace()` or `breakpoint()` calls'
+    entry: 'breakpoint\(\)|set_trace\(\)'
+    language: pygrep
+    types: [python]
 -   id: python-no-eval
     name: check for eval()
     description: 'A quick check for the `eval()` built-in function'
