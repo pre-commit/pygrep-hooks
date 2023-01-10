@@ -31,6 +31,6 @@ For example, a hook which targets python will be called `python-...`.
 - **`python-no-log-warn`**: A quick check for the deprecated `.warn()` method of python loggers
 - **`python-use-type-annotations`**: Enforce that python3.6+ type annotations are used instead of type comments
 - **`rst-backticks`**: Detect common mistake of using single backticks when writing rst
-- **`rst-directive-colons`**: Detect mistake of rst directive not ending with double colon
+- **`rst-directive-colons`**: Detect mistake of rst directive not ending with double colon or space before the double colon
 - **`rst-inline-touching-normal`**: Detect mistake of inline code touching normal text in rst
 - **`text-unicode-replacement-char`**: Forbid files which have a UTF-8 Unicode replacement character

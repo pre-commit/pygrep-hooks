@@ -249,6 +249,10 @@ def test_text_unicode_replacement_char_negative(s):
     (
         '    .. warning:',
         '.. warning:',
+        '    .. warning ::',
+        '.. warning ::',
+        '    .. warning :',
+        '.. warning :',
     ),
 )
 def test_rst_directive_colons_positive(s):
