@@ -82,6 +82,7 @@ def test_python_check_blanket_type_ignore_positive(s):
     (
         'x = 1',
         'x = 1  # type: ignore[attr-defined]',
+        'x = 1  # type: ignore [attr-defined]',
         'x = 1  # type: ignore[attr-defined, name-defined]',
         'x = 1  # type: ignore[type-mismatch]  # noqa',
         'x = 1  # type: Union[int, str]',
