@@ -29,10 +29,12 @@ def test_python_use_type_annotations_positive(s):
         'x = 1  # type:ignore',
         'x = 1  # type: ignore',
         'x = 1  # type:  ignore',
+        'x = 1  # type:  ignore    ',
         'x = 1  # type: ignore # noqa',
         'x = 1  # type: ignore  # noqa',
         'x = 1  # type: ignore[type-mismatch]',
         'x = 1  # type: ignore=E123',
+        'x = 1  # types of integers are ok',
     ),
 )
 def test_python_use_type_annotations_negative(s):
