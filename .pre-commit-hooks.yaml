@@ -35,6 +35,12 @@
             )($|[^(\w])
         )
     types: [python]
+-   id: python-no-breakpoint
+    name: check for breakpoint()
+    description: 'A quick check for the `breakpoint()` built-in function'
+    entry: '\bbreakpoint\('
+    language: pygrep
+    types: [python]
 -   id: python-no-eval
     name: check for eval()
     description: 'A quick check for the `eval()` built-in function'
@@ -45,6 +51,12 @@
     name: use logger.warning(
     description: 'A quick check for the deprecated `.warn()` method of python loggers'
     entry: '(?<!warnings)\.warn\('
+    language: pygrep
+    types: [python]
+-   id: python-no-pdb-set-trace
+    name: check for pdb.set_trace()
+    description: 'A quick check for the `pdb.set_trace()` function'
+    entry: '\bpdb\.set_trace\('
     language: pygrep
     types: [python]
 -   id: python-use-type-annotations
