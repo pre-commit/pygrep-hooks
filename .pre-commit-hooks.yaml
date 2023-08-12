@@ -47,6 +47,12 @@
     entry: '(?<!warnings)\.warn\('
     language: pygrep
     types: [python]
+-   id: python-no-lstrip-rstrip-with-literal-str
+    name: check for lstrip or rstrip calls with literal string
+    description: 'A quick check for lstrip or rstrip calls that should use removeprefix or removesuffix'
+    entry: '\.[lr]strip\("\S'
+    language: pygrep
+    types: [python]
 -   id: python-use-type-annotations
     name: type annotations not comments
     description: 'Enforce that python3.6+ type annotations are used instead of type comments'

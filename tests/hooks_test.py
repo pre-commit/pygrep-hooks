@@ -158,6 +158,33 @@ def test_python_no_log_warn_negative(s):
 @pytest.mark.parametrize(
     's',
     (
+        'my_url.lstrip("http://")',
+        'filename.rstrip(".html")',
+        's.lstrip("ABC")',
+        's.rstrip("ABC")',
+    ),
+)
+def test_python_no_lstrip_positive(s):
+    assert HOOKS['python-no-lstrip-rstrip-with-literal-str'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'csv_field.lstrip()',
+        'line.rstrip()',
+        'line.rstrip("\n")',
+        's.allstrip("ABC")',
+        's.farstrip("ABC")',
+    ),
+)
+def test_python_no_lstrip_negative(s):
+    assert not HOOKS['python-no-lstrip-rstrip-with-literal-str'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
         '`[code]`',
         'i like `_kitty`',
         'i like `_`',
