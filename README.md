@@ -27,8 +27,10 @@ For example, a hook which targets python will be called `python-...`.
 - **`python-check-blanket-noqa`**: Enforce that `noqa` annotations always occur with specific codes. Sample annotations: `# noqa: F401`, `# noqa: F401,W203`
 - **`python-check-blanket-type-ignore`**: Enforce that `# type: ignore` annotations always occur with specific codes. Sample annotations: `# type: ignore[attr-defined]`, `# type: ignore[attr-defined, name-defined]`
 - **`python-check-mock-methods`**: Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)` and `mck.assert_called`.
+- **`python-no-breakpoint`**: A quick check for the `breakpoint()` built-in function
 - **`python-no-eval`**: A quick check for the `eval()` built-in function
 - **`python-no-log-warn`**: A quick check for the deprecated `.warn()` method of python loggers
+- **`python-no-pdb-set-trace`**: A quick check for the `pdb.set_trace()` function
 - **`python-use-type-annotations`**: Enforce that python3.6+ type annotations are used instead of type comments
 - **`rst-backticks`**: Detect common mistake of using single backticks when writing rst
 - **`rst-directive-colons`**: Detect mistake of rst directive not ending with double colon or space before the double colon
