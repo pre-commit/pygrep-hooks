@@ -50,7 +50,7 @@
 -   id: python-no-lstrip-rstrip-with-literal-str
     name: check for lstrip or rstrip calls with literal string
     description: 'A quick check for lstrip or rstrip calls that should use removeprefix or removesuffix'
-    entry: '\.[lr]strip\("\S'
+    entry: '\.[lr]strip\(["'']\S'
     language: pygrep
     types: [python]
 -   id: python-use-type-annotations

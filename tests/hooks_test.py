@@ -162,6 +162,8 @@ def test_python_no_log_warn_negative(s):
         'filename.rstrip(".html")',
         's.lstrip("ABC")',
         's.rstrip("ABC")',
+        "s.lstrip('ABC')",
+        "s.rstrip('ABC')",
     ),
 )
 def test_python_no_lstrip_positive(s):
@@ -176,6 +178,8 @@ def test_python_no_lstrip_positive(s):
         'line.rstrip("\n")',
         's.allstrip("ABC")',
         's.farstrip("ABC")',
+        "s.allstrip('ABC')",
+        "s.farstrip('ABC')",
     ),
 )
 def test_python_no_lstrip_negative(s):
