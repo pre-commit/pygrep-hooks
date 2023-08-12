@@ -29,7 +29,7 @@ For example, a hook which targets python will be called `python-...`.
 - **`python-check-mock-methods`**: Prevent common mistakes of `assert mck.not_called()`, `assert mck.called_once_with(...)` and `mck.assert_called`.
 - **`python-no-eval`**: A quick check for the `eval()` built-in function
 - **`python-no-log-warn`**: A quick check for the deprecated `.warn()` method of python loggers
-- **`python-no-lstrip-rstrip-with-literal-str`**: A quick check for lstrip or rstrip calls that should use removeprefix or removesuffix
+- **`python-no-lstrip-rstrip-with-literal-str`**: A quick check for `str.lstrip()` or `str.rstrip()` calls that should probably use `str.removeprefix()` or `str.removesuffix()`
 - **`python-use-type-annotations`**: Enforce that python3.6+ type annotations are used instead of type comments
 - **`rst-backticks`**: Detect common mistake of using single backticks when writing rst
 - **`rst-directive-colons`**: Detect mistake of rst directive not ending with double colon or space before the double colon
