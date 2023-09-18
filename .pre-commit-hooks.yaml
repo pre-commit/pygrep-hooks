@@ -4,6 +4,12 @@
     entry: '(?i)# noqa(?!: )'
     language: pygrep
     types: [python]
+-   id: python-check-blanket-nosec
+    name: check blanket nosec
+    description: 'Enforce that `nosec` annotations always occur with specific codes. Sample annotations: `# nosec assert_used`, `# nosec B602, B607`'
+    entry: '(?i)#\s*nosec:?\s*(?![^#])'
+    language: pygrep
+    types: [python]
 -   id: python-check-blanket-type-ignore
     name: check blanket type ignore
     description: 'Enforce that `# type: ignore` annotations always occur with specific codes. Sample annotations: `# type: ignore[attr-defined]`, `# type: ignore[attr-defined, name-defined]`'

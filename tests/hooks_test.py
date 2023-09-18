@@ -42,6 +42,34 @@ def test_python_use_type_annotations_negative(s):
 @pytest.mark.parametrize(
     's',
     (
+        '# nosec',
+        '# NOSEC',
+        '# nosec: ',
+        '# nosec ',
+    ),
+)
+def test_python_check_blanket_nosec_positive(s):
+    assert HOOKS['python-check-blanket-nosec'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'x = 1',
+        '# nosec:B401',
+        '# nosec:B401',
+        '# nosec:B401,B203',
+        '# nosec: B401',
+        '# nosec: B401, B203',
+    ),
+)
+def test_python_check_blanket_nosec_negative(s):
+    assert not HOOKS['python-check-blanket-nosec'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
         '# noqa',
         '# NOQA',
         '# noqa:F401',
