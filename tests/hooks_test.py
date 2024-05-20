@@ -270,5 +270,28 @@ def test_rst_directive_colons_negative(s):
     assert not HOOKS['rst-directive-colons'].search(s)
 
 
+@pytest.mark.parametrize(
+    's',
+    (
+        'qs.all().count()',
+        'qs.all().filter(thing=True)',
+        'qs.all().exclude(thing=True)',
+        'qs.all().update(thing=True)',
+    ),
+)
+def test_django_no_redundant_queryset_all_positive(s):
+    assert HOOKS['django-no-redundant-queryset-all'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'qs.all().some_custom_thing()',
+    ),
+)
+def test_django_no_redundant_queryset_all_negative(s):
+    assert not HOOKS['django-no-redundant-queryset-all'].search(s)
+
+
 def test_that_hooks_are_sorted():
     assert list(HOOKS) == sorted(HOOKS)

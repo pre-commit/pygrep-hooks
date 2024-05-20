@@ -1,3 +1,10 @@
+-   id: django-no-redundant-queryset-all
+    name: no redundant calls to queryset.all()
+    description: Check for redundant calls to the queryset `all()` method
+    entry: all\(\s*\)\.(count|filter|exclude|update)\(
+    language: pygrep
+    args: [--multiline]
+    types: [python]
 -   id: python-check-blanket-noqa
     name: check blanket noqa
     description: 'Enforce that `noqa` annotations always occur with specific codes. Sample annotations: `# noqa: F401`, `# noqa: F401,W203`'
