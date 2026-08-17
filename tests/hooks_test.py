@@ -67,6 +67,37 @@ def test_python_check_blanket_noqa_negative(s):
 @pytest.mark.parametrize(
     's',
     (
+        'x = 1  # nosec',
+        'x = 1  # nosec:',
+        'x = 1  # nosec:     ',
+        'x = 1  # nosec  # noqa',
+    ),
+)
+def test_python_check_blanket_nosec_positive(s):
+    assert HOOKS['python-check-blanket-nosec'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
+        'x = 1',
+        'x = 1  # nosec: B101',
+        'x = 1  # nosec: B101',
+        'x = 1  # nosec: B101,B102',
+        'x = 1  # nosec: B101, B102',
+        'x = 1  # nosec: B101 B102',
+        'x = 1  # nosec:B101 B102',
+        'x = 1  # nosec: B101, subprocess_popen_with_shell_equals_true',
+        'x = 1  # nosec: B101 subprocess_popen_with_shell_equals_true  # noqa',
+    ),
+)
+def test_python_check_blanket_nosec_negative(s):
+    assert not HOOKS['python-check-blanket-nosec'].search(s)
+
+
+@pytest.mark.parametrize(
+    's',
+    (
         'x = 1  # type: ignore',
         'x = 1  # type ignore',
         'x = 1  # type:ignore',
