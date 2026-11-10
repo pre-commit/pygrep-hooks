@@ -44,8 +44,6 @@ def test_python_use_type_annotations_negative(s):
     (
         '# noqa',
         '# NOQA',
-        '# noqa:F401',
-        '# noqa:F401,W203',
     ),
 )
 def test_python_check_blanket_noqa_positive(s):
@@ -58,6 +56,8 @@ def test_python_check_blanket_noqa_positive(s):
         'x = 1',
         '# noqa: F401',
         '# noqa: F401, W203',
+        '# noqa:F401',
+        'x = 1  # noqa:E731,W503',
     ),
 )
 def test_python_check_blanket_noqa_negative(s):
